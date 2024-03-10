@@ -1,0 +1,8 @@
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CORNE_XIAO_LEFT
+	def_bool $(shields_list_contains,corne_xiao_left)
+
+config SHIELD_CORNE_XIAO_RIGHT
+	def_bool $(shields_list_contains,corne_xiao_right)
