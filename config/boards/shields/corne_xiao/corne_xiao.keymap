@@ -60,48 +60,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        td_l1: tap_dance_layer_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <170>;
-            bindings = <&lt ONE ESC>, <&kp ESC>;
-        };
-        
-        td_l2: tap_dance_layer_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <170>;
-            bindings = <&lt TWO SPACE>, <&kp SPACE>;
-        };
-
-        td_l3: tap_dance_layer_3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <170>;
-            bindings = <&lt THR TAB>, <&kp TAB>;
-        };
-
-        td_l4: tap_dance_layer_4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <170>;
-            bindings = <&lt FOU RET>, <&kp RET>;
-        };
-        
-        td_l5: tap_dance_layer_5 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <170>;
-            bindings = <&lt FIV BSPC>, <&kp BSPC>;
-        };
-
-        td_l6: tap_dance_layer_6 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <170>;
-            bindings = <&lt SIX DEL>, <&kp DEL>;
-        };
-
      };
 };
 
@@ -125,7 +83,7 @@
 // |-------------|-------------|-------------|-------------|-------------|                    |-------------|-------------|-------------|-------------|-------------|
       &kp Z         &kp X         &kp C         &kp V         &kp B                              &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
 // |-------------|-------------|-------------|-------------|-------------|                    |-------------|-------------|-------------|-------------|-------------|
-                                 &lt ONE ESC  &lt TWO SPACE  &lt THR TAB                        &lt FOU RET   &lt FIV BSPC  &lt SIX DEL
+                                 &lt ONE ESC  &lt TWO SPACE  &lt THR TAB                        &lt FOU RET  &lt FIV BSPC   &lt SIX DEL
 //                             |-------------|-------------|-------------|                    |-------------|-------------|-------------|
             >;
         };
