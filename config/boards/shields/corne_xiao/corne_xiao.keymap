@@ -35,7 +35,6 @@
         bh: layer_taps 
 		{
 			compatible = "zmk,behavior-hold-tap";
-			label = "Layer-Tap";
 			#binding-cells = <2>;
 			tapping_term_ms = <215>;
             flavor = "tap-preferred";
@@ -44,7 +43,6 @@
 
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <170>;
             quick_tap_ms = <0>;
@@ -54,7 +52,6 @@
 
 		sm: shift_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <170>;
             quick_tap_ms = <0>;
@@ -89,7 +86,6 @@
 //                             |-------------|-------------|-------------|                    |-------------|-------------|-------------|
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
             >;
-		    label = "BASE";
         };
 
     };
