@@ -133,13 +133,13 @@
         fourth_layer {
             bindings = <
 // |-------------|-------------|-------------|-------------|-------------|                    |-------------|-------------|-------------|-------------|-------------|
-        &none         &none         &none         &none         &none                              &none         &none         &none         &none         &none
+      &kp LPAR      &kp AMPS      &kp STAR      &kp NUBS      &kp RPAR                             &none         &none         &none         &none         &none
 // |-------------|-------------|-------------|-------------|-------------|                    |-------------|-------------|-------------|-------------|-------------|
-       &kp LGUI      &kp LALT     &kp LCTRL     &kp LSHFT       &none                              &none       &kp RSHFT     &kp RCTRL      &kp RALT      &kp RGUI   
+      &kp LBKT      &kp DLLR      &kp PRCNT     &kp CARET     &kp RBKT                             &none       &kp RSHFT     &kp RCTRL      &kp RALT      &kp RGUI   
 // |-------------|-------------|-------------|-------------|-------------|                    |-------------|-------------|-------------|-------------|-------------|
-        &none         &none         &none         &none         &none                              &none         &none         &none         &none         &none
+      &kp MINUS     &kp EXCL      &kp AT        &kp HASH      &kp EQUAL                            &none         &none         &none         &none         &none
 // |-------------|-------------|-------------|-------------|-------------|                    |-------------|-------------|-------------|-------------|-------------|
-                                    &none         &none         &none                              &none         &none         &none                            
+                                  &kp SQT       &kp SEMI      &kp GRAVE                            &none         &none         &none                            
 //                             |-------------|-------------|-------------|                    |-------------|-------------|-------------|
             >;
         };
