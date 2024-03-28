@@ -25,8 +25,9 @@
 };
 
 &mt {
-    tapping-term-ms = <175>;
-    quick-tap-ms = <165>;
+    tapping-term-ms = <210>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <160>;
 };
 
 / {
