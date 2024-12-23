@@ -55,8 +55,8 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick-tap-ms = <90>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <100>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
