@@ -91,10 +91,10 @@
 
         second_layer {
             bindings = <
-  &none     &none     &none      &none      &none  &kp CAPS  &kp HOME  &kp PG_UP  &none      &none
-  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &none
-  &none     &none     &none      &none      &none  &kp INS   &kp END   &kp PG_DN  &none      &none
-                      &none      &none      &none            &none     &none      &none
+  &none     &none     &none      &none      &none  &none     &kp END    &kp HOME   &none            &none
+  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT        &none
+  &none     &none     &none      &none      &none  &none     &kp PG_DN  &kp PG_UP  &none            &none
+                      &none      &none      &none            &kp CAPS   &kp INS    &kp PAUSE_BREAK
             >;
         };
 
