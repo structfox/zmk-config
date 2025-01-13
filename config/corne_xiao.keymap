@@ -73,23 +73,23 @@
 
         default_layer {
             bindings = <
-  &kp Q       &kp W       &kp E        &kp R          &kp T        &kp Y  &kp U        &kp I         &kp O        &kp P
-  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F    &kp G        &kp H  &hm RSHFT J  &hm RCTRL K   &hm RALT L   &hm RGUI SEMI
-  &kp Z       &kp X       &kp C        &kp V          &kp B        &kp N  &kp M        &kp COMMA     &kp DOT      &kp FSLH
-                          &lt ONE ESC  &lt TWO SPACE  &lt THR TAB         &lt FOU RET  &lt FIV BSPC  &lt SIX DEL
+  &kp Q       &kp W       &kp E        &kp R        &kp T      &kp Y  &kp U        &kp I        &kp O       &kp P
+  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F  &kp G      &kp H  &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMI
+  &kp Z       &kp X       &kp C        &kp V        &kp B      &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH
+                          &lt 6 ESC    &lt 3 SPACE  &lt 7 TAB         &lt 4 RET    &lt 4 BSPC   &lt 1 DEL
             >;
         };
 
-        first_layer {
+        function {
             bindings = <
-  &none     &none     &none      &none      &none  &out OUT_USB    &out OUT_BLE  &out OUT_TOG  &none         &none
-  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP  &none         &none
-  &none     &none     &none      &none      &none  &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-                      &none      &none      &none                  &none         &none         &none
+  &none  &kp F7  &kp F8  &kp F9  &kp F10  &none  &none      &none      &none     &none
+  &none  &kp F4  &kp F5  &kp F6  &kp F11  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+  &none  &kp F1  &kp F2  &kp F3  &kp F12  &none  &none      &none      &none     &none
+                 &none   &none   &none           &none      &none      &none
             >;
         };
 
-        second_layer {
+        navigation {
             bindings = <
   &none     &none     &none      &none      &none  &none     &kp END    &kp HOME   &none            &none
   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT        &none
@@ -98,25 +98,7 @@
             >;
         };
 
-        third_layer {
-            bindings = <
-  &none     &none     &none      &none      &none  &none  &none  &none  &none  &none
-  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &none  &none  &none  &none  &none
-  &none     &none     &none      &none      &none  &none  &none  &none  &none  &none
-                      &none      &none      &none         &none  &none  &none
-            >;
-        };
-
-        fourth_layer {
-            bindings = <
-  &kp LPAR   &kp AMPS  &kp STAR   &kp GRAVE  &kp RPAR   &none  &none      &none      &none     &none
-  &kp LBKT   &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT   &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
-  &kp MINUS  &kp EXCL  &kp AT     &kp HASH   &kp EQUAL  &none  &none      &none      &none     &none
-                       &kp BSLH   &kp DQT    &kp SQT           &none      &none      &none
-            >;
-        };
-
-        fifth_layer {
+        number {
             bindings = <
   &none  &kp N7  &kp N8  &kp N9  &kp N0  &none  &none      &none      &none     &none
   &none  &kp N4  &kp N5  &kp N6  &none   &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
@@ -125,12 +107,30 @@
             >;
         };
 
-        sixth_layer {
+        symbol {
             bindings = <
-  &none  &kp F7  &kp F8  &kp F9  &kp F10  &none  &none      &none      &none     &none
-  &none  &kp F4  &kp F5  &kp F6  &kp F11  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
-  &none  &kp F1  &kp F2  &kp F3  &kp F12  &none  &none      &none      &none     &none
-                 &none   &none   &none           &none      &none      &none
+  &kp LPAR   &kp AMPS  &kp STAR   &kp GRAVE  &kp RPAR   &none  &none      &none      &none     &none
+  &kp LBKT   &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT   &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
+  &kp MINUS  &kp EXCL  &kp AT     &kp HASH   &kp EQUAL  &none  &none      &none      &none     &none
+                       &kp BSLH   &kp DQT    &kp SQT           &none      &none      &none
+            >;
+        };
+
+        control {
+            bindings = <
+  &none     &none     &none      &none      &none  &out OUT_USB    &out OUT_BLE  &out OUT_TOG  &none         &none
+  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP  &none         &none
+  &none     &none     &none      &none      &none  &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+                      &none      &none      &none                  &none         &none         &none
+            >;
+        };
+
+        mouse {
+            bindings = <
+  &none     &none     &none      &none      &none  &none  &none  &none  &none  &none
+  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &none  &none  &none  &none  &none
+  &none     &none     &none      &none      &none  &none  &none  &none  &none  &none
+                      &none      &none      &none         &none  &none  &none
             >;
         };
     };
