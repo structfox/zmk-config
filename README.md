@@ -1,3 +1,3 @@
 # zmk-xiao-ble-corne
 
-![keymap](/resource/my_keymap.svg)
+![keymap](/resource/my_keymap.png)
