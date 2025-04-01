@@ -69,7 +69,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <160>;
             quick-tap-ms = <160>;
-            require-prior-idle-ms = <140>;
+            require-prior-idle-ms = <100>;
             hold-trigger-key-positions = <LEFT_KEYS RIGHT_KEYS RIGHT_THUMBS>;
             hold-trigger-on-release;
         };
@@ -80,7 +80,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <160>;
             quick-tap-ms = <160>;
-            require-prior-idle-ms = <140>;
+            require-prior-idle-ms = <100>;
             hold-trigger-key-positions = <LEFT_KEYS RIGHT_KEYS LEFT_THUMBS>;
             hold-trigger-on-release;
         };
@@ -92,7 +92,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <120>;
             quick-tap-ms = <160>;
-            require-prior-idle-ms = <140>;
+            require-prior-idle-ms = <100>;
             hold-trigger-key-positions = <RIGHT_KEYS LEFT_THUMBS RIGHT_THUMBS>;
             hold-trigger-on-release;
         };
@@ -103,7 +103,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <120>;
             quick-tap-ms = <160>;
-            require-prior-idle-ms = <140>;
+            require-prior-idle-ms = <100>;
             hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS RIGHT_THUMBS>;
             hold-trigger-on-release;
         };
