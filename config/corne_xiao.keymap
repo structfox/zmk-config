@@ -159,10 +159,10 @@
 
         symbol {
             bindings = <
-  &kp LPAR   &kp AMPS  &kp STAR   &kp GRAVE  &kp RPAR   &none  &none      &none      &none     &none
+  &kp LPAR   &kp AMPS  &kp STAR   &kp BSLH   &kp RPAR   &none  &none      &none      &none     &none
   &kp LBKT   &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT   &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
   &kp MINUS  &kp EXCL  &kp AT     &kp HASH   &kp EQUAL  &none  &none      &none      &none     &none
-                       &kp BSLH   &kp DQT    &kp SQT           &none      &none      &none
+                       &kp GRAVE  &kp DQT    &kp SQT           &none      &none      &none
             >;
         };
 
