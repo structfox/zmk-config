@@ -24,11 +24,6 @@
 #define LEFT_THUMBS 30 31 32
 #define RIGHT_THUMBS 33 34 35
 
-&lt {
-    tapping-term-ms = <160>;
-    quick-tap-ms = <150>;
-};
-
 / {
     combos {
         compatible = "zmk,combos";
