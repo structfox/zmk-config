@@ -41,6 +41,7 @@
         };
 
         combo_undo {
+            timeout-ms = <COMBO_TIMEOUT>;
             bindings = <&kp LC(Z)>;
             key-positions = <20 21>;
         };
