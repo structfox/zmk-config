@@ -46,6 +46,7 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
+		wakeup-source;
 
 		diode-direction = "col2row";
 		row-gpios
@@ -54,7 +55,7 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
 			, <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    //Row2
 			, <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    //Row3
 			;
-		
+
 	};
    
 	// TODO: per-key RGB node(s)?
