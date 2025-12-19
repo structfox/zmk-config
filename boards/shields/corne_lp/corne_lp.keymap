@@ -3,8 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  *
- * 실제 키맵은 config/corne_xiao.keymap 참조
- * This is a placeholder - actual keymap is in config/corne_xiao.keymap
+ * 실제 키맵은 config/corne_lp.keymap 참조
+ * This is a placeholder - actual keymap is in config/corne_lp.keymap
  */
 
 #include <behaviors.dtsi>

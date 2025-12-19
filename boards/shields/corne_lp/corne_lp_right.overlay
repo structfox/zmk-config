@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "corne_xiao.dtsi"
+#include "corne_lp.dtsi"
 
 &five_column_transform {
 	col-offset = <6>;
