@@ -18,11 +18,5 @@ include:
   - board: xiao_ble
     shield: corne_lp_right
 
-  - board: nice_nano
-    shield: corne_lp_dongle
-
-  - board: nice_nano
-    shield: settings_reset
-
   - board: xiao_ble
     shield: settings_reset
