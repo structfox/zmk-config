@@ -1,10 +1,26 @@
-if SHIELD_CORNE_LP_LEFT
+if SHIELD_CORNE_LP_DONGLE
 
 config ZMK_KEYBOARD_NAME
 	default "Corne"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+	default 2
+
+config BT_MAX_CONN
+    default 6
+
+config BT_MAX_PAIRED
+    default 6
+
+endif
+
+if SHIELD_CORNE_LP_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Corne_Left"
 
 endif
 
@@ -17,7 +33,14 @@ endif
 
 if SHIELD_CORNE_LP_LEFT || SHIELD_CORNE_LP_RIGHT
 
-config ZMK_SPLIT
-	default y
+config ZMK_SPLIT_ROLE_CENTRAL
+	default n
+
+endif
+
+if SHIELD_CORNE_LP_DONGLE || SHIELD_CORNE_LP_LEFT || SHIELD_CORNE_LP_RIGHT
+
+	config ZMK_SPLIT
+		default y
 
 endif
