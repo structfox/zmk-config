@@ -55,7 +55,7 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -72,5 +72,14 @@
     compatible = "zmk,input-listener";
     device = <&trackball>;
 
+    scroller {
+      layers = <6>;  // SCR 레이어
+      input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+
+    sniper {
+      layers = <7>;  // SNI 레이어
+      input-processors = <&zip_xy_scaler 1 3>;  // 1/3 속도
+    };
   };
 };
