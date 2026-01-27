@@ -11,7 +11,7 @@ include:
 # dongle
 
   - board: nice_nano
-    shield: corne_lp_dongle
+    shield: corne_lp_dongle dongle_display
 
 
 # Keyboard
