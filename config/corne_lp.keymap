@@ -31,18 +31,18 @@
         combo_copy {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <21 22>;
-            bindings = <&kp LC(C)>;
+            bindings = <&kp LG(C)>;
         };
 
         combo_paste {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <22 23>;
-            bindings = <&kp LC(V)>;
+            bindings = <&kp LG(V)>;
         };
 
         combo_undo {
             timeout-ms = <COMBO_TIMEOUT>;
-            bindings = <&kp LC(Z)>;
+            bindings = <&kp LG(Z)>;
             key-positions = <20 21>;
         };
 
