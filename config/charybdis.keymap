@@ -4,6 +4,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#define LEFT_KEYS    0 1 2 3 4   10 11 12 13 14   20 21 22 23 24
+#define RIGHT_KEYS   5 6 7 8 9   15 16 17 18 19   25 26 27 28 29
+#define LEFT_THUMBS  30 31 32
+#define RIGHT_THUMBS 33 34
+
 #define BASE 0
 #define NUFU 1
 #define SYM 2
@@ -26,31 +31,49 @@
     chosen { zmk,matrix_transform = &five_column_transform; };
 
     behaviors {
-        hml: homewrow_mods_left {
+        tll: thumb_layer_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT_HAND";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34>;
             flavor = "balanced";
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <125>;
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-key-positions = <LEFT_KEYS RIGHT_KEYS RIGHT_THUMBS>;
+            hold-trigger-on-release;
+        };
+        tlr: thumb_layer_right {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-key-positions = <LEFT_KEYS RIGHT_KEYS LEFT_THUMBS>;
             hold-trigger-on-release;
         };
 
-        hmr: homewrow_mods_right {
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT_HAND";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
             flavor = "balanced";
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-key-positions = <RIGHT_KEYS LEFT_THUMBS RIGHT_THUMBS>;
+            hold-trigger-on-release;
+        };
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS RIGHT_THUMBS>;
             hold-trigger-on-release;
         };
     };
@@ -61,10 +84,10 @@
         Base {
             label = "Base";
             bindings = <
-              &kp       Q  &kp       W  &kp        E  &kp        R  &kp T        &kp Y  &kp        U  &kp        I  &kp       O  &kp               P  
-              &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G        &kp H  &hml RSHFT J  &hml RCTRL K  &hml RALT L  &hml RGUI SEMICOLON  
-              &lt   POI Z  &kp       X  &kp        C  &kp        V  &kp B        &kp N  &kp        M  &kp    COMMA  &kp     DOT  &lt POI SLASH
-                                        &lt MED ESC  &lt NAV SPACE  &sl NUFU     &kp ENTER &sl SYM
+  &kp Q       &kp W       &kp E        &kp R        &kp T      &kp Y  &kp U        &kp I        &kp O       &kp P
+  &hml LCTRL A  &hml LALT S  &hml LSHFT D  &hml LGUI F  &kp G      &kp H  &hmr RGUI J  &hmr RSHFT K  &hmr RALT L  &hmr RCTRL SEMI
+  &kp Z       &kp X       &kp C        &kp V        &kp B      &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH
+                          &tll 1 ESC    &tll 2 SPACE  &tll 3 TAB         &tlr 4 RET    &tlr 5 BSPC
             >;
         };
 
