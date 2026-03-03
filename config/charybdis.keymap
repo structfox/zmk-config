@@ -28,8 +28,6 @@
 };
 
 / {
-    chosen { zmk,matrix_transform = &five_column_transform; };
-
     behaviors {
         tll: thumb_layer_left {
             compatible = "zmk,behavior-hold-tap";
