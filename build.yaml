@@ -5,8 +5,8 @@ include:
   # - board: xiao_ble
   #   shield: settings_reset
 
-  - board: nice_nano//zmk
-    shield: settings_reset
+  # - board: nice_nano//zmk
+  #   shield: settings_reset
 
 # dongle
 
