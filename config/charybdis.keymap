@@ -3,6 +3,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define COMBO_TIMEOUT 60
 
 #define LEFT_KEYS    0 1 2 3 4   10 11 12 13 14   20 21 22 23 24
 #define RIGHT_KEYS   5 6 7 8 9   15 16 17 18 19   25 26 27 28 29
@@ -10,22 +13,52 @@
 #define RIGHT_THUMBS 33 34
 
 #define BASE 0
-#define NAV 1
-#define POI 2
-#define SYM 3
-#define NUM 4
-#define MED 5
-#define FUN 6
-#define SCR 7
-#define SNI 8
+#define NAV  1
+#define POI  2
+#define SYM  3
+#define NUM  4
+#define FUN  5
+#define CNT  6
+#define SCR  7
+#define SNI  8
 
 &sl {
-  release-after-ms = <250>;
+    release-after-ms = <250>;
 };
 
 &mt {
     tapping-term-ms = <200>;
     require-prior-idle-ms = <150>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_copy {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <21 22>;
+            bindings = <&kp LG(C)>;
+        };
+
+        combo_paste {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <22 23>;
+            bindings = <&kp LG(V)>;
+        };
+
+        combo_undo {
+            timeout-ms = <COMBO_TIMEOUT>;
+            bindings = <&kp LG(Z)>;
+            key-positions = <20 21>;
+        };
+
+        combo_f18 {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <27 28>;
+            bindings = <&kp F18>;
+        };
+    };
 };
 
 / {
@@ -77,96 +110,96 @@
         };
     };
 
-
     keymap {
         compatible = "zmk,keymap";
+
         Base {
             label = "Base";
             bindings = <
-  &kp Q       &kp W       &kp E        &kp R        &kp T      &kp Y  &kp U        &kp I        &kp O       &kp P
-  &hml LCTRL A  &hml LALT S  &hml LSHFT D  &hml LGUI F  &kp G      &kp H  &hmr RGUI J  &hmr RSHFT K  &hmr RALT L  &hmr RCTRL SEMI
-  &kp Z       &kp X       &kp C        &kp V        &kp B      &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH
-                          &tll NAV ESC  &tll POI SPACE  &tll SYM TAB         &tlr NUM RET  &tlr MED BSPC
+              &kp Q         &kp W         &kp E          &kp R           &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P
+              &hml LCTRL A  &hml LALT S   &hml LSHFT D   &hml LGUI F     &kp G            &kp H         &hmr RGUI J   &hmr RSHFT K  &hmr RALT L   &hmr RCTRL SEMI
+              &kp Z         &kp X         &kp C          &kp V           &kp B            &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
+                                          &tll NAV ESC   &tll POI SPACE  &tll SYM TAB     &tlr NUM RET  &tlr FUN BSPC
             >;
         };
 
         Navigation {
             label = "Navigation";
             bindings = <
-              &trans      &trans      &trans      &trans      &trans         &trans     &trans         &kp TAB      &trans     &kp DELETE
-              &kp LCTRL   &kp LALT    &kp LSHFT   &kp LGUI    &trans         &kp LEFT   &kp DOWN       &kp UP       &kp RIGHT  &kp BACKSPACE
-              &trans      &trans      &trans      &trans      &trans         &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp INS
-                                      &trans      &trans      &trans         &trans     &trans
+              &trans        &trans        &trans         &trans          &trans           &trans        &kp END        &kp HOME      &trans        &kp PAUSE_BREAK
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT     &trans
+              &trans        &trans        &trans         &mo CNT         &trans           &trans        &kp PAGE_DOWN  &kp PAGE_UP   &trans        &kp INS
+                                          &trans         &trans          &trans           &kp CAPS      &kp DEL
             >;
         };
 
         Pointer {
             label = "Pointer";
             bindings = <
-              &trans       &trans       &trans        &trans        &trans               &trans     &trans        &trans        &trans       &trans
-              &kp LGUI     &kp LALT     &kp LCTRL     &kp LSHFT     &trans               &trans     &kp RSHFT     &kp RCTRL     &kp RALT     &kp RGUI
-              &trans       &mo SCR      &mo SNI       &trans        &trans               &trans     &trans        &tog SNI      &tog SCR     &trans
-                                        &mkp RCLK     &mkp LCLK     &mkp MCLK            &mkp MCLK  &mkp LCLK
+              &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &kp RGUI       &kp RSHFT     &kp RALT      &kp RCTRL
+              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3      &trans
+                                          &trans         &trans          &trans           &mkp MB4      &mkp MB5
             >;
         };
 
         Symbol {
             label = "Symbol";
             bindings = <
-              &kp TILDE &kp AMPS  &kp STAR   &trans    &kp PLUS        &trans &kp LBRC  &kp RBRC  &trans  &kp PIPE
-              &kp MINUS &kp DLLR  &kp PRCNT  &kp CARET &kp EQUAL       &trans &kp LPAR  &kp RPAR  &kp DQT &kp APOS
-              &kp UNDER &kp EXCL  &kp AT     &kp HASH  &kp GRAVE       &trans &kp LBKT  &kp RBKT  &trans  &kp BSLH
-                                  &trans     &trans    &trans          &trans &trans
+              &kp TILDE     &kp AMPS      &kp STAR       &trans          &kp PLUS         &trans        &kp LBRC       &kp RBRC      &trans        &kp PIPE
+              &kp MINUS     &kp DLLR      &kp PRCNT      &kp CARET       &kp EQUAL        &trans        &kp LPAR       &kp RPAR      &kp DQT       &kp APOS
+              &kp UNDER     &kp EXCL      &kp AT         &kp HASH        &kp GRAVE        &trans        &kp LBKT       &kp RBKT      &trans        &kp BSLH
+                                          &trans         &trans          &trans           &trans        &trans
             >;
         };
 
         Number {
             label = "Number";
             bindings = <
-              &trans     &kp N7    &kp N8    &kp N9    &N0                   &trans      &trans       &trans      &trans      &trans
-              &trans     &kp N4    &kp N5    &kp N6    &trans                &kp trans   &kp LGUI     &kp LSHFT   &kp LALT    &LCTRL
-              &trans     &kp N1    &kp N2    &kp N3    &trans                &trans      &tog FUN     &trans      &trans      &trans
-                                   &trans    &trans    &trans                &trans      &trans
-            >;
-        };
-
-        Media {
-            label = "Media";
-            bindings = <
-              &trans     &trans        &bt BT_CLR_ALL &trans       &trans            &trans      &trans        &bt BT_CLR_ALL  &trans        &trans
-              &kp C_PREV &kp C_VOL_DN  &kp C_MUTE     &kp C_VOL_UP &kp C_NEXT        &kp C_PREV  &kp C_VOL_DN  &kp C_MUTE      &kp C_VOL_UP  &kp C_NEXT
-              &trans     &trans        &trans         &trans       &trans            &trans      &trans        &trans          &trans        &trans
-                                       &trans    &kp C_PLAY_PAUSE  &kp C_STOP        &kp C_STOP  &kp C_PLAY_PAUSE
+              &trans        &kp N7        &kp N8         &kp N9          &kp N0           &trans        &trans         &trans        &trans        &trans
+              &trans        &kp N4        &kp N5         &kp N6          &trans           &trans        &kp RGUI       &kp RSHFT     &kp RALT      &kp RCTRL
+              &trans        &kp N1        &kp N2         &kp N3          &trans           &trans        &trans         &trans        &trans        &trans
+                                          &trans         &trans          &trans           &trans        &trans
             >;
         };
 
         Function {
             label = "Function";
             bindings = <
-              &trans     &kp F7    &kp F8    &kp F9    &F10                   &trans      &trans       &trans      &trans      &trans
-              &trans     &kp F4    &kp F5    &kp F6    &F11                   &kp trans   &kp LGUI     &kp LSHFT   &kp LALT    &LCTRL
-              &trans     &kp F1    &kp F2    &kp F3    &F12                   &trans      &tog FUN     &trans      &trans      &trans
-                                   &trans    &trans    &trans                 &trans      &trans
+              &trans        &kp F7        &kp F8         &kp F9          &kp F10          &trans        &trans         &trans        &trans        &trans
+              &trans        &kp F4        &kp F5         &kp F6          &kp F11          &trans        &kp RGUI       &kp RSHFT     &kp RALT      &kp RCTRL
+              &trans        &kp F1        &kp F2         &kp F3          &kp F12          &trans        &trans         &trans        &trans        &trans
+                                          &trans         &trans          &trans           &trans        &trans
+            >;
+        };
+
+        Control {
+            label = "Control";
+            bindings = <
+              &trans        &trans        &trans         &trans          &trans           &out OUT_TOG    &out OUT_BLE   &out OUT_USB   &trans        &trans
+              &trans        &trans        &trans         &trans          &trans           &kp C_MUTE      &kp C_VOL_DN   &kp C_VOL_UP   &trans        &trans
+              &trans        &trans        &trans         &trans          &trans           &bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3
+                                          &trans         &trans          &trans           &trans          &trans
             >;
         };
 
         Scroll {
             label = "Scroll";
             bindings = <
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans
+              &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &kp RGUI       &kp RSHFT     &kp RALT      &kp RCTRL
+              &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
+                                          &trans         &trans          &trans           &trans        &trans
             >;
         };
 
         Sniper {
             label = "Sniper";
             bindings = <
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans
+              &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &kp RGUI       &kp RSHFT     &kp RALT      &kp RCTRL
+              &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
+                                          &trans         &trans          &trans           &trans        &trans
             >;
         };
     };
