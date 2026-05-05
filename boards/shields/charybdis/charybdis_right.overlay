@@ -6,6 +6,7 @@
  
 #include "charybdis.dtsi"
 #include <dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 
 &five_column_transform {
@@ -89,7 +90,13 @@
 
     scroller {
       layers = <7>;  // SCR 레이어
-      input-processors = <&zip_xy_scaler 1 4>, <&zip_xy_to_scroll_mapper>;
+      // 매퍼가 X→HWHEEL, Y→WHEEL로 바꾼 뒤 vertical만 부호 반전 (자연 스크롤)
+      // x_scaler = 수평 스크롤 속도, y_scaler = 수직 스크롤 속도
+      input-processors =
+          <&zip_x_scaler 1 25>,
+          <&zip_y_scaler 1 20>,
+          <&zip_xy_to_scroll_mapper>,
+          <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
     };
 
     sniper {
