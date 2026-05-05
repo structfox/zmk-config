@@ -10,13 +10,14 @@
 #define RIGHT_THUMBS 33 34
 
 #define BASE 0
-#define NUFU 1
-#define SYM 2
-#define NAV 3
-#define MED 4
-#define POI 5
-#define SCR 6
-#define SNI 7
+#define NAV 1
+#define POI 2
+#define SYM 3
+#define NUM 4
+#define MED 5
+#define FUN 6
+#define SCR 7
+#define SNI 8
 
 &sl {
   release-after-ms = <250>;
@@ -85,17 +86,27 @@
   &kp Q       &kp W       &kp E        &kp R        &kp T      &kp Y  &kp U        &kp I        &kp O       &kp P
   &hml LCTRL A  &hml LALT S  &hml LSHFT D  &hml LGUI F  &kp G      &kp H  &hmr RGUI J  &hmr RSHFT K  &hmr RALT L  &hmr RCTRL SEMI
   &kp Z       &kp X       &kp C        &kp V        &kp B      &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH
-                          &tll 1 ESC    &tll 2 SPACE  &tll 3 TAB         &tlr 4 RET    &tlr 5 BSPC
+                          &tll NAV ESC  &tll POI SPACE  &tll SYM TAB         &tlr NUM RET  &tlr MED BSPC
             >;
         };
 
-        NuFu {
-            label = "Numeral/Function";
+        Navigation {
+            label = "Navigation";
             bindings = <
-                &trans  &kp F7  &kp F8  &kp F9 &kp F12        &trans  &kp N7  &kp N8  &kp N9  &kp DELETE
-                &trans  &kp F4  &kp F5  &kp F6 &kp F11        &trans  &kp N4  &kp N5  &kp N6  &kp BACKSPACE
-                &trans  &kp F1  &kp F2  &kp F3 &kp F10        &trans  &kp N1  &kp N2  &kp N3  &trans
-                                &trans  &trans  &trans        &trans &kp N0 
+              &trans      &trans      &trans      &trans      &trans         &trans     &trans         &kp TAB      &trans     &kp DELETE
+              &kp LCTRL   &kp LALT    &kp LSHFT   &kp LGUI    &trans         &kp LEFT   &kp DOWN       &kp UP       &kp RIGHT  &kp BACKSPACE
+              &trans      &trans      &trans      &trans      &trans         &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp INS
+                                      &trans      &trans      &trans         &trans     &trans
+            >;
+        };
+
+        Pointer {
+            label = "Pointer";
+            bindings = <
+              &trans       &trans       &trans        &trans        &trans               &trans     &trans        &trans        &trans       &trans
+              &kp LGUI     &kp LALT     &kp LCTRL     &kp LSHFT     &trans               &trans     &kp RSHFT     &kp RCTRL     &kp RALT     &kp RGUI
+              &trans       &mo SCR      &mo SNI       &trans        &trans               &trans     &trans        &tog SNI      &tog SCR     &trans
+                                        &mkp RCLK     &mkp LCLK     &mkp MCLK            &mkp MCLK  &mkp LCLK
             >;
         };
 
@@ -109,13 +120,13 @@
             >;
         };
 
-        Navigation {
-            label = "Navigation";
+        Number {
+            label = "Number";
             bindings = <
-                         &trans  &trans  &trans  &trans  &trans         &trans    &trans         &kp TAB      &trans    &kp DELETE
-                         &trans  &trans  &trans  &trans  &trans         &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT &kp BACKSPACE
-                         &trans  &trans  &trans  &trans  &trans         &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END   &kp INS
-                                         &trans  &trans  &trans         &trans    &trans
+              &trans     &kp N7    &kp N8    &kp N9    &N0                   &trans      &trans       &trans      &trans      &trans
+              &trans     &kp N4    &kp N5    &kp N6    &trans                &kp trans   &kp LGUI     &kp LSHFT   &kp LALT    &LCTRL
+              &trans     &kp N1    &kp N2    &kp N3    &trans                &trans      &tog FUN     &trans      &trans      &trans
+                                   &trans    &trans    &trans                &trans      &trans
             >;
         };
 
@@ -129,13 +140,13 @@
             >;
         };
 
-        Pointer {
-            label = "Pointer";
+        Function {
+            label = "Function";
             bindings = <
-              &trans       &trans       &trans        &trans        &trans               &trans &trans        &trans        &trans       &trans
-              &kp LGUI     &kp LALT     &kp LCTRL     &kp LSHFT     &trans               &trans &kp RSHFT     &kp RCTRL     &kp RALT     &kp RGUI
-              &trans       &mo SCR      &mo SNI       &trans        &trans               &trans &trans        &tog SNI      &tog SCR     &trans
-                                            &mkp RCLK  &mkp LCLK  &mkp MCLK         &mkp MCLK  &mkp LCLK
+              &trans     &kp F7    &kp F8    &kp F9    &F10                   &trans      &trans       &trans      &trans      &trans
+              &trans     &kp F4    &kp F5    &kp F6    &F11                   &kp trans   &kp LGUI     &kp LSHFT   &kp LALT    &LCTRL
+              &trans     &kp F1    &kp F2    &kp F3    &F12                   &trans      &tog FUN     &trans      &trans      &trans
+                                   &trans    &trans    &trans                 &trans      &trans
             >;
         };
 

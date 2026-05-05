@@ -56,7 +56,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <1200>;
+        cpi = <1000>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_Y>;
         y-input-code = <INPUT_REL_X>;
@@ -66,9 +66,19 @@
 };
 
 / {
+  /omit-if-no-ref/ pointer_temp_layer: pointer_temp_layer {
+    compatible = "zmk,input-processor-temp-layer";
+    #input-processor-cells = <2>;
+    require-prior-idle-ms = <500>;
+    excluded-positions = <30 31 32 33 34>;  // 엄지열은 레이어 해제 제외
+  };
+
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
+
+    // 트랙볼 움직임이 발생하면 POI 레이어를 1초간 자동 활성화
+    input-processors = <&pointer_temp_layer 2 1000>;
 
     scroller {
       layers = <6>;  // SCR 레이어
