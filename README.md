@@ -1,3 +1,3 @@
-# zmk-xiao-ble-corne
+# zmk-keyboards
 
-![keymap](/resource/my_keymap.png)
+![keymap](/resource/charybdis.png)
