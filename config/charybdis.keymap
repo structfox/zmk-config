@@ -147,9 +147,9 @@
             label = "Pointer";
             bindings = <
               &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
-              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &kp RGUI       &kp RSHFT     &kp RALT      &kp RCTRL
-              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3      &trans
-                                          &trans         &trans          &trans           &mkp MB4      &mkp MB5
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3      &trans
+              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB4       &mkp MB5      &trans        &trans
+                                          &trans         &trans          &trans           &trans        &trans
             >;
         };
 
