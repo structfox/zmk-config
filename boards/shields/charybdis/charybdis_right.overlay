@@ -86,7 +86,7 @@
     device = <&trackball>;
 
     // 트랙볼 움직임이 발생하면 POI 레이어를 1초간 자동 활성화
-    input-processors = <&pointer_temp_layer 2 500>;
+    input-processors = <&pointer_temp_layer 3 500>;
 
     scroller {
       layers = <7>;  // SCR 레이어
@@ -94,8 +94,9 @@
       // x_scaler = 수평 스크롤 속도, y_scaler = 수직 스크롤 속도
       input-processors =
           <&zip_x_scaler 1 25>,
-          <&zip_y_scaler 1 20>,
-          <&zip_xy_to_scroll_mapper>;
+          <&zip_y_scaler 1 30>,
+          <&zip_xy_to_scroll_mapper>,
+          <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
     };
 
     sniper {
