@@ -12,15 +12,16 @@
 #define LEFT_THUMBS  30 31 32
 #define RIGHT_THUMBS 33 34
 
-#define BASE 0
-#define NAV  1
-#define SYM  2
-#define POI  3
-#define NUM  4
-#define FUN  5
-#define CNT  6
-#define SCR  7
-#define SNI  8
+#define BASE  0
+#define NAV   1
+#define SYM   2
+#define POI   3
+#define NUM   4
+#define FUN   5
+#define CNT   6
+#define SCR   7
+#define SNI   8
+#define TBALL 9
 
 &sl {
     release-after-ms = <250>;
@@ -199,6 +200,18 @@
               &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
               &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &kp RGUI       &kp RSHFT     &kp RALT      &kp RCTRL
               &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
+                                          &trans         &trans          &trans           &trans        &trans
+            >;
+        };
+
+        // 트랙볼 움직임으로만 자동 활성화되는 레이어 (Pointer와 동일 바인딩)
+        // POI(3)와 분리해야 ZMK layer state 비트마스크 충돌 방지 — 엄지 POI hold 중 트랙볼 움직여도 layer drop 안 됨
+        Trackball {
+            label = "Trackball";
+            bindings = <
+              &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3      &trans
+              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB4       &mkp MB5      &trans        &trans
                                           &trans         &trans          &trans           &trans        &trans
             >;
         };
