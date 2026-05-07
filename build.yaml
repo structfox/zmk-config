@@ -2,7 +2,7 @@ include:
 
 # Reset
 
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
 
   - board: nice_nano//zmk
@@ -10,16 +10,16 @@ include:
 
 # dongle
 
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: corne_lp_dongle dongle_display
 
 
 # Keyboard
 
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: corne_lp_left
 
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: corne_lp_right
     
   - board: nice_nano//zmk
