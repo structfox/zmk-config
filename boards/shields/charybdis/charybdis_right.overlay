@@ -75,9 +75,9 @@
     // (POI에서 &trans인 위치는 빼야 레이어 자동 해제 트리거가 정상 동작)
     excluded-positions = <
       10 11 12 13           // 왼쪽 home row modifiers (LCTRL LALT LSHFT LGUI)
-      16 17 18              // 마우스 버튼 (MB1 MB2 MB3)
       22 23                 // &mo SNI, &mo SCR
-      26 27                 // 마우스 버튼 (MB4 MB5)
+      26 27 28              // 마우스 버튼 (MB1 MB2 MB3)
+      33 34                 // 우측 엄지 마우스 버튼 (MB4 MB5)
     >;
   };
 
