@@ -1,0 +1,63 @@
+/*
+ * Charybdis Dongle (Nice!Nano based receiver)
+ *
+ * BLE central role. Receives input from left/right peripherals via split BLE
+ * and forwards to host via USB HID. No physical keys, no trackball wired here.
+ */
+
+#include "charybdis.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
+        zephyr,display = &oled;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&five_column_transform>;
+    };
+};
+
+// dtsi의 kscan0은 row-gpios만 정의됨 (col-gpios는 left/right overlay에서 추가).
+// dongle은 mock_kscan을 사용하므로 kscan0 비활성화.
+&kscan0 {
+    status = "disabled";
+};
+
+// peripheral에서 forwarding된 트랙볼 이벤트 수신:
+// split(GATT 수신 channel) + listener(HID 변환) 둘 다 활성화
+&trackball_split {
+    status = "okay";
+};
+
+&trackball_listener {
+    status = "okay";
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: sh1106@3c {
+        compatible = "sinowealth,sh1106";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <2>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        prechargep = <0x22>;
+        segment-remap;
+        com-invdir;
+    };
+};

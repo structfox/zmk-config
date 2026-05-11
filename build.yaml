@@ -1,29 +1,21 @@
 include:
 
-# Reset
-
-  # - board: xiao_ble//zmk
-    # shield: settings_reset
+# Settings reset (페어링 초기화용 - 동글 도입 시 좌/우/동글 모두 한 번 플래시)
 
   - board: nice_nano//zmk
     shield: settings_reset
 
-# dongle
 
-  # - board: nice_nano//zmk
-    # shield: corne_lp_dongle dongle_display
+# Keyboard halves (peripheral 역할)
 
-
-# Keyboard
-
-  # - board: xiao_ble//zmk
-    # shield: corne_lp_left
-
-  # - board: xiao_ble//zmk
-    # shield: corne_lp_right
-    
   - board: nice_nano//zmk
     shield: charybdis_left
 
   - board: nice_nano//zmk
     shield: charybdis_right
+
+
+# Dongle (central 역할 + OLED)
+
+  - board: nice_nano//zmk
+    shield: charybdis_dongle dongle_display
