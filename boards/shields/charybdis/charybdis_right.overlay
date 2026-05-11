@@ -87,7 +87,7 @@
 
     // 트랙볼 움직임이 발생하면 TBALL(9) 레이어를 자동 활성화 (마지막 움직임 후 200ms 유지)
     // POI(3)와 별도 레이어 — 엄지 POI hold 중 트랙볼 움직여도 layer drop 안 됨 (ZMK layer state 비트마스크 충돌 회피)
-    input-processors = <&pointer_temp_layer 9 200>;
+    input-processors = <&pointer_temp_layer 9 150>;
 
     scroller {
       layers = <7>;  // SCR 레이어

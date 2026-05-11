@@ -148,8 +148,8 @@
             label = "Pointer";
             bindings = <
               &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
-              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &trans         &trans        &trans      &trans
-              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3        &trans
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &trans         &trans        &trans        &mo SNI
+              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3      &mo SCR
                                           &trans         &trans          &trans           &mkp MB4      &mkp MB5
             >;
         };
@@ -210,8 +210,8 @@
             label = "Trackball";
             bindings = <
               &trans        &trans        &trans         &trans          &trans           &trans        &trans         &trans        &trans        &trans
-              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &trans         &trans        &trans      &trans
-              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3        &trans
+              &kp LCTRL     &kp LALT      &kp LSHFT      &kp LGUI        &trans           &trans        &trans         &trans        &trans        &mo SNI
+              &trans        &trans        &mo SNI        &mo SCR         &trans           &trans        &mkp MB1       &mkp MB2      &mkp MB3      &mo SCR
                                           &trans         &trans          &trans           &mkp MB4      &mkp MB5
             >;
         };
