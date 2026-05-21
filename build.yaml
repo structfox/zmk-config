@@ -2,8 +2,8 @@ include:
 
 # Settings reset (페어링 초기화용 - 동글 도입 시 좌/우/동글 모두 한 번 플래시)
 
-  - board: nice_nano//zmk
-    shield: settings_reset
+  # - board: nice_nano//zmk
+    # shield: settings_reset
 
 
 # Keyboard halves (peripheral 역할)
