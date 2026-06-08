@@ -186,7 +186,8 @@
             bindings = <
               &trans        &trans        &trans         &trans          &trans           &out OUT_TOG    &out OUT_BLE   &out OUT_USB   &trans        &trans
               &trans        &trans        &trans         &trans          &trans           &kp C_MUTE      &kp C_VOL_DN   &kp C_VOL_UP   &trans        &trans
-              &trans        &trans        &trans         &trans          &trans           &bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3
+              // ESB 전환으로 BLE 비활성화 → &bt 비헤이비어 제거 (롤백 시 &bt BT_CLR_ALL / &bt BT_SEL 0~3 복원)
+              &trans        &trans        &trans         &trans          &trans           &trans          &trans         &trans         &trans        &trans
                                           &trans         &trans          &trans           &trans          &trans
             >;
         };

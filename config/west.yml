@@ -6,6 +6,10 @@ manifest:
       url-base: https://github.com/badjeff
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: kumbung01
+      url-base: https://github.com/kumbung01
+    - name: nrfconnect
+      url-base: https://github.com/nrfconnect
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,5 +21,21 @@ manifest:
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
+    # === ESB split transport (트랙볼 반응속도 향상) ===
+    # BLE split 대신 Nordic ESB(TDMA + FHSS)로 좌/우 peripheral 통신.
+    # 모듈 README의 zmk-split-esb 는 오타이고 실제 repo 이름은 zmk-feature-split-esb.
+    # TDMA/FHSS 코드는 stock sdk-nrf 가 아니라 kumbung01 포크(v3.1-branch-tdma-fhss)에만 존재.
+    - name: zmk-feature-split-esb
+      remote: kumbung01
+      revision: main
+    - name: sdk-nrf
+      remote: kumbung01
+      revision: v3.1-branch-tdma-fhss
+      path: nrf
+    - name: nrfxlib
+      remote: nrfconnect
+      revision: v3.1-branch
+      repo-path: sdk-nrfxlib
+      path: nrfxlib
   self:
     path: config

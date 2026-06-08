@@ -14,6 +14,15 @@
 	    compatible = "zmk,battery-nrf-vddh";
     };
 
+    // ESB split transport 주소 (central/peripheral 공통 — dtsi라 3개 빌드 모두 상속).
+    // 임의 기본 주소. 같은 환경에 charybdis 가 여러 대면 세트마다 다른 값으로 바꿀 것.
+    esb_split {
+        compatible = "zmk,esb-split";
+        base-addr-0 = <0xE7 0xE7 0xE7 0xE7>;
+        base-addr-1 = <0xC2 0xC2 0xC2 0xC2>;
+        addr-prefix = <0xE7 0xC2 0xC3 0xC4 0xC5 0xC6 0xC7 0xC8>;
+    };
+
     five_column_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
