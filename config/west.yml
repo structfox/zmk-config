@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: badjeff
-      url-base: https://github.com/badjeff
     - name: englmaxi
       url-base: https://github.com/englmaxi
   projects:
@@ -11,9 +9,9 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: main
+    # 트랙볼은 Zephyr 4.1 업스트림 입력 드라이버(pixart,pmw3610)를 사용한다.
+    # 해당 드라이버는 zmk가 import 하는 zephyr(v4.1.0+zmk-fixes) 트리에 내장돼 있어
+    # 별도 모듈(badjeff/zmk-pmw3610-driver)이 필요 없다. (엣지 트리거 IRQ로 행 완화)
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
