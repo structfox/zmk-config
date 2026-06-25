@@ -59,9 +59,9 @@
         motion-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         // 기존 cpi=1000 그대로 (업스트림은 res-cpi 속성명).
         res-cpi = <1600>;
-        // 기존 축 스왑(x→REL_Y, y→REL_X) + invert 유지. 업스트림은 zephyr,axis-* 사용.
-        zephyr,axis-x = <INPUT_REL_Y>;
-        zephyr,axis-y = <INPUT_REL_X>;
+        // 기존 invert 유지. 업스트림은 zephyr,axis-* 사용.
+        zephyr,axis-x = <INPUT_REL_X>;
+        zephyr,axis-y = <INPUT_REL_Y>;
         invert-x;
         invert-y;
         // badjeff의 SMART_ALGORITHM(기본 on)과 동등하게 스마트 모드 유지.
