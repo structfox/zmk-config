@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <behaviors/mouse_keys.dtsi>
+#include <behaviors/bat_print.dtsi>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -39,6 +40,8 @@ ZMK_COMBO(paste,      &kp LG(V), LB2 LB1)
 ZMK_COMBO(undo,       &kp LG(Z), LB4 LB3)
 ZMK_COMBO(f18,        &kp F18,   RB2 RB3)
 ZMK_COMBO(poi_toggle, &tog POI,  RB1 RB2)
+// 배터리: T+Y(LT0 RT0) 동시 → "L<좌> R<우>" 타이핑. base 레이어 + 150ms idle(타이핑 중 오발 방지).
+ZMK_COMBO(battery,    &bat_print, LT0 RT0, BASE, 50, 150)
 
 // 엄지 레이어탭 (hold=레이어, tap=키). 타이밍/동작 동일, 위치 그룹만 라벨로.
 ZMK_HOLD_TAP(tll,
