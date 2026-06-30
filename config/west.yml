@@ -4,11 +4,18 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    # #7 zmk-helpers: 키맵 DTS 문법 간소화 매크로(ZMK_HOLD_TAP/ZMK_COMBO/키라벨 등).
+    # 모듈만 추가한 상태 — 실제 효과는 키맵을 헬퍼 문법으로 이관해야 발생(별도 작업).
+    - name: zmk-helpers
+      remote: urob
+      revision: 0b9e9d1dd9e86f70b4c8c2b0fab55c4f90c9d2e3  # urob 핀(2026-04)
     # 트랙볼은 Zephyr 4.1 업스트림 입력 드라이버(pixart,pmw3610)를 사용한다.
     # 해당 드라이버는 zmk가 import 하는 zephyr(v4.1.0+zmk-fixes) 트리에 내장돼 있어
     # 별도 모듈(badjeff/zmk-pmw3610-driver)이 필요 없다. (엣지 트리거 IRQ로 행 완화)
