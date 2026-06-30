@@ -63,18 +63,18 @@ ZMK_HOLD_TAP(tlr,
 // 홈로우 모드 (timeless 값 #3 유지). positional + hold-trigger-on-release.
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
+    tapping-term-ms = <120>;
+    quick-tap-ms = <160>;
+    require-prior-idle-ms = <100>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
 )
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
+    tapping-term-ms = <120>;
+    quick-tap-ms = <160>;
+    require-prior-idle-ms = <100>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
