@@ -63,9 +63,10 @@
         status = "disabled";
         device = <&trackball_split>;
 
-        // #5 auto-mouse-layer: 트랙볼을 움직이면 TBALL(9) 레이어를 임시 활성화.
+        // #5 auto-mouse-layer: 트랙볼을 움직이면 9번(TBALL) 레이어를 임시 활성화.
         // 2번째 인자(250ms) 동안 추가 움직임이 없으면 해제. (세부 속성은 파일 끝 &zip_temp_layer)
-        input-processors = <&zip_temp_layer TBALL 250>;
+        // 주의: 레이어 #define(TBALL 등)은 키맵 파일 전용이라 dtsi에선 숫자 9를 직접 쓴다.
+        input-processors = <&zip_temp_layer 9 250>;
 
         scroller {
             layers = <7>;  // SCR 레이어
