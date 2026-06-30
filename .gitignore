@@ -1,2 +1,12 @@
 .DS_Store
 .omc
+.claude
+
+# 로컬 ZMK 빌드(#2) — west 워크스페이스 & 산출물
+/.build/
+/firmware/
+/.west/
+/zmk/
+/zephyr/
+/modules/
+result
